@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+.venv/
+.venv_build/
+_build_src/
+build/
+dist/
+*.spec
+*.db
+*.sqlite
+# 运行产物 / 本地配置
+report.html
+report.json
+fix.sql
+db_diff_config.json
+.pytest_cache/

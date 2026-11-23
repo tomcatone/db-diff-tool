@@ -1,0 +1,6 @@
+sqlalchemy>=2.0
+# 按需安装数据库驱动（用到哪个装哪个）：
+# pymysql            # MySQL / MariaDB
+# psycopg2-binary    # PostgreSQL
+# oracledb           # Oracle
+# pyodbc             # SQL Server（另需系统安装 ODBC Driver 17/18）

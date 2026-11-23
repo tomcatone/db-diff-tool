@@ -1,0 +1,7 @@
+-r requirements.txt
+pytest
+pyinstaller
+pymysql
+psycopg2-binary
+oracledb
+pyodbc
