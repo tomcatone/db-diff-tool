@@ -1,0 +1,22 @@
+# 没有 Windows 电脑时：把本文件放到仓库的 .github/workflows/build-exe.yml，
+# 连同 db_diff.py、db_diff_gui.py、build_exe.py 一起推送到 GitHub，
+# 在 Actions 页点 "Run workflow"，几分钟后在 Artifacts 里下载 DBDiff-windows.zip
+name: build-exe
+on:
+  workflow_dispatch:
+  push:
+    tags: ["v*"]
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install sqlalchemy pymysql psycopg2-binary oracledb pyodbc pyinstaller
+      - run: python build_exe.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: DBDiff-windows
+          path: dist/*.exe
